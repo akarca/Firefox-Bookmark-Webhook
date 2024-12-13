@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="color-scheme" content="dark light">
+    <style>
+        .spinning:before {
+            position: absolute !important;
+            display: block;
+            content: "";
+            animation: spin 1s infinite linear;
+            color: black !important;
+            left: calc(50% - .5em);
+            top: calc(50% - .6em);
+            border-bottom: 2px solid hsl(221, 14%, 93%);
+            border-left: 2px solid hsl(221, 14%, 93%);
+            border-radius: 9999px;
+            border-right: 2px solid transparent;
+            border-top: 2px solid transparent;
+            height: 1em;
+            width: 1em;
+        }
+
+        .spinning {
+            position: relative;
+            color: transparent !important;
+        }
+
+        #submit-button {
+            display: flex;
+            align-items: center;
+            padding: 7px 15px;
+            margin: 0;
+            justify-content: center;
+            line-height: 24px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        @keyframes spin {
+            from {
+                transform: scale(1) rotate(0deg);
+            }
+
+            to {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="padding: 20px">
+        <form id="server-endpoint-form" action="" method="POST">
+            <label for="server-endpoint">Server Endpoint for bookmark events:</label>
+            <p>
+                <input type="text" id="server-endpoint" placeholder="https://webhook.example.com/" size="40">
+            </p>
+            <button id="submit-button" type="submit">Save</button>
+        </form>
+    </div>
+    <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "Bookmark Events Webhook",
+    "version": "1.0",
+    "description": "Receive firefox bookmark created/updated/deleted events",
+    "homepage_url": "https://github.com/akarca/Firefox-Bookmark-Webhook",
+    "icons": {
+        "48": "icons/bookmark-it.png",
+        "96": "icons/bookmark-it@2x.png"
+    },
+    "permissions": [
+        "bookmarks",
+        "storage"
+    ],
+    "browser_action": {
+        "default_icon": "icons/star-empty-38.png",
+        "default_title": "Bookmark Events Webhook"
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "options_ui": {
+        "page": "options.html",
+        "browser_style": true
+    },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "bookmarkevents@nameocean.net",
+            "strict_min_version": "115.0"
+        }
+    }
+}
